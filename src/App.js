@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+// import FormComponent from "./Components/Form/form";
+// import ListCompenent from "./Components/List/list";
+// import TableCompenent from "./Components/Table/table";
+
+
+import Hello,{Hello1 as Hel1,Hello2 as Hel2} from "./NamedExport/Namedexport";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+  return(
+    <Hello/>
+  )
+
+  // return(
+
+  //   <div>
+  //   <Hello/>
+  //   <Hel1/>
+  //   <Hel2/>
+  //   </div>
+
+  // )
+
+
+
+  // return (
+  //   <div>
+  //     <FormComponent/>
+  //     <ListCompenent/>
+  //     <TableCompenent/>
+    
+  //   </div>
+
+
+
+  // )
+
+ 
 }
 
 export default App;
