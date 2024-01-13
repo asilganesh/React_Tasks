@@ -2,7 +2,13 @@
 // import ListCompenent from "./Components/List/list";
 // import TableCompenent from "./Components/Table/table";
 
-import DarkandNight from "./Components/09Dec/DarkandNight";
+import ApiCalling from "./Components/10DEC/ApiCalling";
+import ExternalStyling from "./Components/11DEC/externalstyling";
+import InlineStyling from "./Components/11DEC/inlinestyling";
+import BootstrapLayout from "./Components/12DEC/boot-strap";
+import MapMethod from "./Components/12DEC/mapMethod";
+
+// import DarkandNight from "./Components/09Dec/DarkandNight";
 
 
 // import Hello,{Hello1 as Hel1,Hello2 as Hel2} from "./NamedExport/Namedexport";
@@ -12,9 +18,16 @@ import DarkandNight from "./Components/09Dec/DarkandNight";
 function App() {
 
 
-return(
-  <DarkandNight/>
-)
+  return(
+    // <BootstrapLayout/>
+    // <MapMethod/>
+    // <InlineStyling/>
+    <ExternalStyling/>
+  )
+
+// return(
+//   <ApiCalling/>
+// )
 
 
 //   return(
