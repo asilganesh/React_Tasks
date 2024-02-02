@@ -36,3 +36,28 @@
     transform: rotate(360deg);
   }
 }
+/* my styles */
+#main{
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+}
+table,tr,th,td{
+  border: 1px solid black;
+}
+input{
+  display: block;
+  
+}
+#ol{
+background-color: #FEF5E7;
+}
+#ul{
+background-color: #EAFAF1;
+}
+#tables{
+  background-color: #EBF5FB;
+}
+
+#forms{
+  background-color:  #F5EEF8 ;
+}
