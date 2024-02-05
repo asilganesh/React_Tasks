@@ -1,7 +1,7 @@
 import FooterComponent from "../../footer/footer"
 import NavBar from "../../navBar/navBar"
 
-import React from "react"
+import React, { useContext } from "react"
 
 
 
@@ -9,20 +9,26 @@ import Naruto from "../../naruto.jpg"
 import UseEffectEx1 from "../../../30JAN/useEffect/useEffectExaple1"
 import UseEffectEx2 from "../../../30JAN/useEffect/useEffectEx2"
 import UseEffectEx3 from "../../../30JAN/useEffect/useeffect3"
+import { DataShare } from "../../navagitaionStack/navigation"
 
 const HomeScreen = () => {
 
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9,1,2,3]
+    const { name, theme } = useContext(DataShare)
+
+    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
 
     return (
 
         <>
             <NavBar />
+            {/* <div style={{ width: 100, height: 100, background: theme ? "red" : "black" }}>
+
+            </div> */}
             {/* <UseEffectEx3/> */}
             {/* <UseEffectEx2/> */}
 
             {/* <UseEffectEx1/> */}
-           {/* <div style={{display:"grid", gridTemplateColumns:"auto auto auto", justifyContent:"space-around"}}>
+            {/* <div style={{display:"grid", gridTemplateColumns:"auto auto auto", justifyContent:"space-around"}}>
             {
                 arr.map((val)=>
                 <React.Fragment>

@@ -1,7 +1,11 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
+import { DataShare } from "../navagitaionStack/navigation"
 
 
 const NavBar = () => {
+    const getDataShare=useContext(DataShare)
+    const {name}=getDataShare
 
     const link={
 
@@ -31,6 +35,12 @@ const NavBar = () => {
                         </li>
                         <li className="nav-item">
                         <Link to="/product" style={link}>Product</Link>
+
+                           
+                        </li>
+
+                        <li className="nav-item">
+                        <Link to="/addname" style={link}>{name}</Link>
 
                            
                         </li>

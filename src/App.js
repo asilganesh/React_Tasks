@@ -2,6 +2,8 @@
 // import ListCompenent from "./Components/List/list";
 // import TableCompenent from "./Components/Table/table";
 
+import ToDoList from "./Components/02FEB/toDoList";
+import Task from "./Components/03FEB/task";
 import ExternalStyling from "./Components/11JAN/externalstyling";
 import InlineStyling from "./Components/11JAN/inlinestyling";
 import ModuleStyling from "./Components/11JAN/modulestyle";
@@ -35,6 +37,8 @@ function App() {
 
   return(
 
+    // <Task/>
+    // <ToDoList/>
     // <Task2/>
     // <Uncontrolled/>
     <NavigationStack/>

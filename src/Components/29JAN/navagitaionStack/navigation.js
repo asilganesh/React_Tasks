@@ -5,29 +5,54 @@ import SettingScreen from "../screens/postLoginScreens/settingScreen"
 import ProductScreen from "../screens/postLoginScreens/productScreen"
 import InvalidPage from "../screens/postLoginScreens/invalidPage"
 import ProductDetails from "../screens/postLoginScreens/productDetails"
+import { createContext, useContext, useState } from "react"
+import AddName from "../screens/postLoginScreens/addName"
+import PostLoginScreen from "../screens/postLoginScreens/postLoginScreens/postLoginScreen"
+import Login from "../screens/postLoginScreens/login-screen"
+import PreLoginScreen from "../screens/postLoginScreens/preLoginScreens/pre-login-screen"
 
 
-const NavigationStack=()=>{
+export const DataShare = createContext()
 
 
-    return(
+const NavigationStack = () => {
+    const [name, setName] = useState("Add Name")
+    const [theme, setTheme] = useState(false)
+    const[login,setLogin]=useState(false)
 
-        <BrowserRouter>
 
-        <Routes>
+    const changeTheme = () => {
 
-            <Route path="/" Component={HomeScreen}/>
-            <Route path="/about" Component={AboutScreen}/>
-            <Route path="/settings" Component={SettingScreen}/>
-            <Route path="/product" Component={ProductScreen}/>
+        setTheme(!theme)
+    }
 
-            <Route path="*"  Component={InvalidPage}/>
+    const changeName = (name) => {
+        setName(name)
+    }
 
-            <Route path="/productDetails/:id" Component={ProductDetails}/>
+    const loginTrue=()=>{
 
-        </Routes>
-        
-        </BrowserRouter>
+        setLogin(!login)
+    }
+    return (
+
+
+        <DataShare.Provider value={{ name, theme, changeTheme, changeName,loginTrue }}>
+            <BrowserRouter>
+
+            {
+                true
+                ?
+                <PostLoginScreen/>
+                :
+                <PreLoginScreen/>
+
+            }
+
+
+            </BrowserRouter>
+
+        </DataShare.Provider>
 
     )
 }

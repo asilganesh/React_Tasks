@@ -1,0 +1,25 @@
+
+
+body{
+    background: linear-gradient(to right, #1f4037, #99f2c8);
+}
+
+.main{
+
+    width:"50%";
+    height:"100vh";
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: "center";
+    overflow:"auto"; 
+    background:" linear-gradient(to right, #0f2027, #203a43, #2c5364)"
+}
+button{
+    background-color: blue;
+}
+
+.list{
+
+font-size:"40px";
+
+}
