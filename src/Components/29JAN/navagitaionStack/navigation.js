@@ -10,6 +10,8 @@ import AddName from "../screens/postLoginScreens/addName"
 import PostLoginScreen from "../screens/postLoginScreens/postLoginScreens/postLoginScreen"
 import Login from "../screens/postLoginScreens/login-screen"
 import PreLoginScreen from "../screens/postLoginScreens/preLoginScreens/pre-login-screen"
+import { useCounter } from "../../05FEB/customeHooks/useCounter"
+
 
 
 export const DataShare = createContext()
@@ -19,6 +21,11 @@ const NavigationStack = () => {
     const [name, setName] = useState("Add Name")
     const [theme, setTheme] = useState(false)
     const[login,setLogin]=useState(false)
+
+    // importing the useCounter Custom Hook here...
+
+    const[count,increment,decrement]=useCounter()
+
 
 
     const changeTheme = () => {
@@ -37,7 +44,7 @@ const NavigationStack = () => {
     return (
 
 
-        <DataShare.Provider value={{ name, theme, changeTheme, changeName,loginTrue }}>
+        <DataShare.Provider value={{ name, theme, changeTheme, changeName,loginTrue,count,increment,decrement }}>
             <BrowserRouter>
 
             {

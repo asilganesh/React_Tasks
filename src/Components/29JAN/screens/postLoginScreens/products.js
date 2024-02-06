@@ -1,42 +1,45 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useAxios } from "../../../05FEB/customeHooks/useaxios"
 
 
 const Products = () => {
 
 
-    const [products, setproducts] = useState([])
+    // const [products, setproducts] = useState([])
     const [TotalPrice, setTotalPrice] = useState(null)
 
-    useEffect(() => {
+    const[products, setproducts]=useAxios()
 
-        fetcthData()
+    // useEffect(() => {
+
+    //     fetcthData()
 
 
 
-    }, [])
+    // }, [])
 
-    const fetcthData = () => {
+    // const fetcthData = () => {
 
-        axios.get("https://fakestoreapi.com/products")
-            .then(response => {
+    //     axios.get("https://fakestoreapi.com/products")
+    //         .then(response => {
 
-                let newResponse = response.data.map((eachObject) => {
+    //             let newResponse = response.data.map((eachObject) => {
 
-                    return { ...eachObject, count: 1, totalPrice: eachObject.price }
-                })
+    //                 return { ...eachObject, count: 1, totalPrice: eachObject.price }
+    //             })
 
-                setproducts(newResponse)
+    //             setproducts(newResponse)
 
-                let result = sumofTotalPrice(newResponse)
-                console.log(result)
-                setTotalPrice(result)
-                return newResponse
-            })
+    //             let result = sumofTotalPrice(newResponse)
+    //             console.log(result)
+    //             setTotalPrice(result)
+    //             return newResponse
+    //         })
 
-        console.log(products)
-    }
+    //     console.log(products)
+    // }
 
     const sumofTotalPrice = (eachObject) => {
 
@@ -85,7 +88,7 @@ const Products = () => {
             <div style={{ display: "grid", gridTemplateColumns: "repeat(3,auto)", justifyContent: "space-evenly", }}>
 
                 {
-                    products.length > 0 ?
+                    products?.length > 0 ?
                         products.map(value => <ProductsListing key={value.id} data={value} IncremetnAndDecrement={IncremetnAndDecrement} />) : <h1>Loading...</h1>
 
                 }

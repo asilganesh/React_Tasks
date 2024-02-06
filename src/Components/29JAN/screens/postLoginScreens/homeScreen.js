@@ -13,7 +13,7 @@ import { DataShare } from "../../navagitaionStack/navigation"
 
 const HomeScreen = () => {
 
-    const { name, theme } = useContext(DataShare)
+    const { name, theme,count,increment,decrement } = useContext(DataShare)
 
     let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3]
 
@@ -21,6 +21,9 @@ const HomeScreen = () => {
 
         <>
             <NavBar />
+            <h1>{`This is Global counter -- ${count}`}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
             {/* <div style={{ width: 100, height: 100, background: theme ? "red" : "black" }}>
 
             </div> */}

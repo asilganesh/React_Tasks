@@ -11,7 +11,7 @@ import UseReducerEx from "../../../02FEB/useReducerExample"
 const AboutScreen = () => {
 
     const data=useContext(DataShare)
-    const {name,theme,changeTheme}=data
+    const {name,theme,changeTheme,count,increment,decrement}=data
   
     const changeThemeOf=()=>{
 
@@ -23,7 +23,10 @@ const AboutScreen = () => {
 
         <>
             <NavBar />
-            <UseReducerEx/>
+            <h1>{`This is Global counter -- ${count}`}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+            {/* <UseReducerEx/> */}
             {/* <div style={{width:100,height:100,backgroundColor:theme?"red":"black"}}>
 
             </div>
